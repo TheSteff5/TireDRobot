@@ -6,9 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Samples/Meta XR Interaction SDK OVR Samples/62.0.0/Example Scenes/HandGrabExamples.unity
+    guid: 39ae0e546b9edc0408d3b11c6a7c2814
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b1bd3b36ee5425d48a2d2ceab0e99174,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: cc1d16cbe49de584e992c18f4f55c48a,
       type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 7552dc68e65868546af5ac5e4b8efc84,
