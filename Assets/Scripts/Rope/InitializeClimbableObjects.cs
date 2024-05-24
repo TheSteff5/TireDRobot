@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class InitializeClimbableObjects : MonoBehaviour
 {
     public ClimbInteractable climbInteractable;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,14 +26,17 @@ public class InitializeClimbableObjects : MonoBehaviour
         yield return new WaitForSeconds(1f); // 1 second delay
 
         // Find and assign all collider children
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < climbInteractable.transform.childCount; i++)
         {
-            Transform child = transform.GetChild(i);
+            Transform child = climbInteractable.transform.GetChild(i);
             GameObject childGameObject = child.gameObject;
             climbInteractable.colliders.Insert(i, childGameObject.GetComponent<Collider>());
-            // Do something with the child GameObject
-            Debug.Log("Child GameObject name: " + childGameObject.name);
         }
+        yield return new WaitForEndOfFrame();
+        climbInteractable.interactionManager.UnregisterInteractable(climbInteractable as IXRInteractable);
+        yield return new WaitForEndOfFrame();
+        climbInteractable.interactionManager.RegisterInteractable(climbInteractable as IXRInteractable);
+
     }
 
 }
