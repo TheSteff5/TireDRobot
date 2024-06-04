@@ -17,7 +17,6 @@ public class ParticleAttachment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         attachedGameObjects = new GameObject[solver.allocParticleCount];
         for (int i = 0; i < solver.allocParticleCount; i++)
         {
