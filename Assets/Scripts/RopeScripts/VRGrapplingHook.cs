@@ -1,5 +1,6 @@
 using Obi;
 using Oculus.Interaction.Editor.Generated;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class VRGrapplingHook : MonoBehaviour
     public ObiRopeSection section;
     public Transform bowAttachment;
     public Transform revolver;
+    public event Action OnInitializationComplete;
+    public event Action detachedHook;
 
     private ObiRope rope;
     private ObiRopeBlueprint blueprint;
@@ -27,6 +30,10 @@ public class VRGrapplingHook : MonoBehaviour
 
     private RaycastHit hookAttachment;
     private Vector3 hitPoint;
+
+    private bool obiRopeCreated = false;
+    public GameObject attachedGameObjectPrefab;
+    private GameObject[] attachedGameObjects;
 
     void Awake()
     {
@@ -149,6 +156,8 @@ public class VRGrapplingHook : MonoBehaviour
                 length += rope.elements[i].restLength;
             }
             yield return null;
+
+
         }
 
      
@@ -166,6 +175,11 @@ public class VRGrapplingHook : MonoBehaviour
         pinConstraints.AddBatch(batch);
 
         rope.SetConstraintsDirty(Oni.ConstraintType.Pin);
+
+
+
+        OnInitializationComplete?.Invoke();
+
     }
 
     private void DetachHook()
@@ -173,11 +187,14 @@ public class VRGrapplingHook : MonoBehaviour
         // Set the rope blueprint to null (automatically removes the previous blueprint from the solver, if any).
         rope.ropeBlueprint = null;
         rope.GetComponent<MeshRenderer>().enabled = false;
+        detachedHook?.Invoke();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+
+
     }
 }
