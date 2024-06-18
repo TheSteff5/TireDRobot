@@ -6,6 +6,7 @@ public class ParticleAttachmentHook : MonoBehaviour
 {
     private ObiSolver solver;
     public GameObject attachedGameObjectPrefab;
+    public GameObject ropeObject;
     private GameObject[] attachedGameObjects;
     public VRGrapplingHook grapplingHook;
     private bool createdRope = false;
@@ -31,13 +32,14 @@ public class ParticleAttachmentHook : MonoBehaviour
     void SetAttachedGameObjects()
     {
         solver = grapplingHook.GetComponentInParent<ObiSolver>();
+        ObiRope rope = ropeObject.GetComponent<ObiRope>();
         // The initialization is complete, execute your functions
         Debug.Log("Received initialization complete message");
-        attachedGameObjects = new GameObject[solver.allocParticleCount];
-        for (int i = 0; i < solver.allocParticleCount; i++)
+        attachedGameObjects = new GameObject[rope.elements.Count];
+        for (int i = 0; i < rope.elements.Count; i++)
         {
             // Get the predicted position of the particle
-            Vector3 particlePosition = solver.renderablePositions[i];
+            Vector3 particlePosition = rope.GetParticlePosition(rope.solverIndices[i]);
 
             // Instantiate the attached GameObject at the particle's position
             GameObject attachedGameObject = Instantiate(attachedGameObjectPrefab, particlePosition, Quaternion.identity);
@@ -68,10 +70,11 @@ public class ParticleAttachmentHook : MonoBehaviour
     {
         if (createdRope)
         {
+            ObiRope rope = ropeObject.GetComponent<ObiRope>();
             for (int i = 0; i < attachedGameObjects.Length; i++)
             {
                 // Get the predicted position of the particle from the solver
-                Vector3 particlePosition = solver.renderablePositions[i];
+                Vector3 particlePosition = rope.GetParticlePosition(rope.solverIndices[i]);
 
                 // Update the position of the attached GameObject to match the particle's position
                 attachedGameObjects[i].transform.position = particlePosition;
