@@ -7,21 +7,20 @@ public class MoveToHand : MonoBehaviour
 {
 
     public GameObject rightHand;
+    public GameObject rope;
 
     private Rigidbody rb;
 
     public void move()
     {
-        Debug.Log("Position before: " + transform.position);
 
         rb = GetComponent<Rigidbody>();
 
         transform.position = rightHand.transform.position;
         rb.isKinematic = true;
 
+        VRGrapplingHook hook = rope.GetComponent<VRGrapplingHook>();
 
-        Debug.Log("Position changed to: " + transform.position);
-        Debug.Log("HandPosition: " + rightHand.transform.position);
-
+        hook.DetachHook();
     }
 }

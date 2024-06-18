@@ -10,7 +10,6 @@ public class RopeCut : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered! " + other);
         if (other.GetComponent<ObiRope>() != null)
         {
             ObiRope rope = other.GetComponent<ObiRope>();
@@ -42,8 +41,6 @@ public class RopeCut : MonoBehaviour
 
         if (closestParticleIndex != -1)
         {
-            Debug.Log("Particle Index: " + closestParticleIndex);
-            Debug.Log("ParticleArrayLength: " + rope.elements.Count);
             rope.Tear(rope.elements[closestParticleIndex]);
             cut = true;
         }

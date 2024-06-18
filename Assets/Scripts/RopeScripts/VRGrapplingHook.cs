@@ -1,5 +1,6 @@
 using Obi;
 using Oculus.Interaction.Editor.Generated;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,9 @@ public class VRGrapplingHook : MonoBehaviour
     public ObiRopeSection section;
     public Transform bowAttachment;
     public Transform revolver;
+    public MeshRenderer grapplingHook;
+    public event Action OnInitializationComplete;
+    public event Action detachedHook;
 
     private ObiRope rope;
     private ObiRopeBlueprint blueprint;
@@ -27,6 +31,10 @@ public class VRGrapplingHook : MonoBehaviour
 
     private RaycastHit hookAttachment;
     private Vector3 hitPoint;
+
+    private bool obiRopeCreated = false;
+    public GameObject attachedGameObjectPrefab;
+    private GameObject[] attachedGameObjects;
 
     void Awake()
     {
@@ -77,7 +85,6 @@ public class VRGrapplingHook : MonoBehaviour
 	 */
     private void LaunchHook()
     {
-        Debug.Log("Hook launced!");
 
         // Get a ray from the character to the mouse:
         Ray ray = new Ray(bowAttachment.position, bowAttachment.forward);
@@ -85,6 +92,7 @@ public class VRGrapplingHook : MonoBehaviour
         // Raycast to see what we hit:
         if (Physics.Raycast(ray, out hookAttachment))
         {
+            grapplingHook.enabled = false;
             // We actually hit something, so attach the hook!
             StartCoroutine(AttachHook());
         }
@@ -127,7 +135,7 @@ public class VRGrapplingHook : MonoBehaviour
         float currentLength = 0;
         while (true)
         {
-            Vector3 origin = solver.transform.InverseTransformPoint(rope.transform.position);
+            Vector3 origin = solver.transform.InverseTransformPoint(bowAttachment.position);
             Vector3 direction = hookAttachment.point - origin;
             float distance = direction.magnitude;
             direction.Normalize();
@@ -159,25 +167,24 @@ public class VRGrapplingHook : MonoBehaviour
 
         // Pin both ends of the rope (this enables two-way interaction between character and rope):
         var batch = new ObiPinConstraintsBatch();
-        batch.AddConstraint(rope.elements[0].particle1, character, transform.localPosition, Quaternion.identity, 0, 0, float.PositiveInfinity);
+        Vector3 bowAttachmentOffset = character.transform.InverseTransformPoint(bowAttachment.position);
+        batch.AddConstraint(rope.elements[0].particle1, character, bowAttachmentOffset, Quaternion.identity, 0, 0, float.PositiveInfinity);
         batch.AddConstraint(rope.elements[rope.elements.Count - 1].particle2, hookAttachment.collider.GetComponent<ObiColliderBase>(),
                                                           hookAttachment.collider.transform.InverseTransformPoint(hookAttachment.point), Quaternion.identity, 0, 0, float.PositiveInfinity);
         batch.activeConstraintCount = 2;
         pinConstraints.AddBatch(batch);
 
         rope.SetConstraintsDirty(Oni.ConstraintType.Pin);
+
+        OnInitializationComplete?.Invoke();
     }
 
-    private void DetachHook()
+    public void DetachHook()
     {
         // Set the rope blueprint to null (automatically removes the previous blueprint from the solver, if any).
         rope.ropeBlueprint = null;
         rope.GetComponent<MeshRenderer>().enabled = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        grapplingHook.enabled = true;
+        detachedHook?.Invoke();
     }
 }
