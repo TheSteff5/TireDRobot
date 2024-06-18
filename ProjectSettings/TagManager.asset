@@ -8,6 +8,7 @@ TagManager:
   - Climbable
   - Rope
   - Floor
+  - CutCollider
   layers:
   - Default
   - TransparentFX

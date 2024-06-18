@@ -10,9 +10,9 @@ public class RopeCut : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<ObiRope>() != null)
+        if (other.CompareTag("CutCollider"))
         {
-            ObiRope rope = other.GetComponent<ObiRope>();
+            ObiRope rope = other.GetComponentInParent<ObiRope>();
             FindClosestParticle(rope);
         } else
         {
