@@ -7,6 +7,7 @@ public class InitializeClimbableObjects : MonoBehaviour
     public PlayerController player; 
     public ClimbInteractable climbInteractable;
     private Rigidbody playerRigidBody;
+    public VRGrapplingHook grapplingHook;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,11 @@ public class InitializeClimbableObjects : MonoBehaviour
         // Ensure the Climb Interactable component is referenced
         climbInteractable = GetComponent<ClimbInteractable>();
         playerRigidBody = player.playerRig.GetComponent<Rigidbody>();
+        if (grapplingHook != null)
+        {
+            // Subscribe to the event
+            grapplingHook.OnInitializationComplete += OnInitializationDone;
+        }
         // Start a coroutine to wait for and assign colliders
         StartCoroutine(AssignCollidersAfterDelay());
     }
@@ -21,6 +27,14 @@ public class InitializeClimbableObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    void OnInitializationDone()
+    {
+        // Ensure the Climb Interactable component is referenced
+        climbInteractable = GetComponent<ClimbInteractable>();
+        // Start a coroutine to wait for and assign colliders
+        StartCoroutine(AssignCollidersAfterDelay());
     }
 
     private IEnumerator AssignCollidersAfterDelay()
