@@ -4,13 +4,16 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class InitializeClimbableObjects : MonoBehaviour
 {
+    public PlayerController player; 
     public ClimbInteractable climbInteractable;
+    private Rigidbody playerRigidBody;
 
     // Start is called before the first frame update
     void Start()
     {
         // Ensure the Climb Interactable component is referenced
         climbInteractable = GetComponent<ClimbInteractable>();
+        playerRigidBody = player.playerRig.GetComponent<Rigidbody>();
         // Start a coroutine to wait for and assign colliders
         StartCoroutine(AssignCollidersAfterDelay());
     }
@@ -38,5 +41,4 @@ public class InitializeClimbableObjects : MonoBehaviour
         climbInteractable.interactionManager.RegisterInteractable(climbInteractable as IXRInteractable);
 
     }
-
 }

@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class ParticleAttachment : MonoBehaviour
 {
-
-
-    public ObiRope rope;
     public ObiSolver solver;
     public GameObject attachedGameObjectPrefab;
     private GameObject[] attachedGameObjects;
