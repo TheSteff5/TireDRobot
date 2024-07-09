@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class VRGrapplingHook : MonoBehaviour
 {
@@ -14,11 +15,12 @@ public class VRGrapplingHook : MonoBehaviour
     public Transform bowAttachment;
     public Transform revolver;
     public MeshRenderer grapplingHook;
+    public InputActionReference triggerInputActionReference;
     public event Action OnInitializationComplete;
     public event Action detachedHook;
 
     private ObiRope rope;
-    private ObiRopeBlueprint blueprint;
+    public ObiRopeBlueprint blueprint;
     private ObiRopeExtrudedRenderer ropeRenderer;
 
     [Range(0, 1)]
@@ -31,10 +33,35 @@ public class VRGrapplingHook : MonoBehaviour
 
     private RaycastHit hookAttachment;
     private Vector3 hitPoint;
+    private bool pressed = false;
+    private bool gunHold = false;
 
-    private bool obiRopeCreated = false;
     public GameObject attachedGameObjectPrefab;
-    private GameObject[] attachedGameObjects;
+
+    private void Update()
+    {
+        if (gunHold)
+        {
+            float triggerValue = triggerInputActionReference.action.ReadValue<float>();
+
+            if (triggerValue > 0.8f)
+            {
+                if (!pressed)
+                {
+                    pressed = true;
+                    ButtonTriggered();
+                }
+            }
+            else
+            {
+                if (pressed)
+                {
+                    pressed = false;
+                }
+            }
+        }
+        
+    }
 
     void Awake()
     {
@@ -49,10 +76,10 @@ public class VRGrapplingHook : MonoBehaviour
         rope.GetComponent<MeshRenderer>().material = material;
 
         // Setup a blueprint for the rope:
-        blueprint = ScriptableObject.CreateInstance<ObiRopeBlueprint>();
-        blueprint.resolution = 0.5f;
-        blueprint.thickness = 0.02f;
-        blueprint.pooledParticles = particlePoolSize;
+       // blueprint = ScriptableObject.CreateInstance<ObiRopeBlueprint>();
+     //   blueprint.resolution = 0.5f;
+      //  blueprint.thickness = 0.02f;
+       // blueprint.pooledParticles = particlePoolSize;
 
         // Tweak rope parameters:
         rope.maxBending = 0.001f;
@@ -186,5 +213,15 @@ public class VRGrapplingHook : MonoBehaviour
         rope.GetComponent<MeshRenderer>().enabled = false;
         grapplingHook.enabled = true;
         detachedHook?.Invoke();
+    }
+    
+    public void HoldGun()
+    {
+        gunHold = true;
+    }
+
+    public void ReleaseGun()
+    {
+        gunHold = false;
     }
 }

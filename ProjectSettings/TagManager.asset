@@ -6,15 +6,17 @@ TagManager:
   tags:
   - SamplesInfoPanel
   - Climbable
+  - Rope
+  - Floor
   - CutCollider
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ClimableSphere
   - Water
   - UI
-  - 
+  - Hands
   - 
   - 
   - 

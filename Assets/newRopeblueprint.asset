@@ -1,0 +1,777 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9138158572052056740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775ad4994fda946d1a5936c7e2dfc785, type: 3}
+  m_Name: point1
+  m_EditorClassIdentifier: 
+  particleIndices: 02000000
+  m_Blueprint: {fileID: 11400000}
+--- !u!114 &-7828078713169601980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775ad4994fda946d1a5936c7e2dfc785, type: 3}
+  m_Name: Start Point
+  m_EditorClassIdentifier: 
+  particleIndices: 00000000
+  m_Blueprint: {fileID: 11400000}
+--- !u!114 &-6422044287048655407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775ad4994fda946d1a5936c7e2dfc785, type: 3}
+  m_Name: point4
+  m_EditorClassIdentifier: 
+  particleIndices: 08000000
+  m_Blueprint: {fileID: 11400000}
+--- !u!114 &-5335283029686375946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775ad4994fda946d1a5936c7e2dfc785, type: 3}
+  m_Name: point6
+  m_EditorClassIdentifier: 
+  particleIndices: 0c000000
+  m_Blueprint: {fileID: 11400000}
+--- !u!114 &-1579985929624494094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775ad4994fda946d1a5936c7e2dfc785, type: 3}
+  m_Name: point3
+  m_EditorClassIdentifier: 
+  particleIndices: 06000000
+  m_Blueprint: {fileID: 11400000}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7e67b5626124d0db9886e6cd2aacff, type: 3}
+  m_Name: newRopeblueprint
+  m_EditorClassIdentifier: 
+  m_Empty: 0
+  m_ActiveParticleCount: 16
+  m_InitialActiveParticleCount: 16
+  _bounds:
+    m_Center: {x: 0.13937998, y: 0.0000004701649, z: 0.02308485}
+    m_Extent: {x: 3.2911744, y: 0.00000049389234, z: 0.4632959}
+  positions:
+  - {x: -3.1517944, y: 0.000000035177308, z: 0.00000044246943}
+  - {x: -2.6583476, y: 0.000000055817313, z: 0.0000003443113}
+  - {x: -2.1648655, y: 0.00000007436549, z: 0.00000025610134}
+  - {x: -1.6312462, y: 0.00000047635393, z: 0.24678928}
+  - {x: -1.0947044, y: 0.0000008666185, z: 0.48638076}
+  - {x: -0.6213006, y: 0.00000041760393, z: 0.24109243}
+  - {x: -0.14600088, y: -0.000000023727447, z: 0.0000013037319}
+  - {x: 0.2640656, y: 0.00000047216326, z: -0.22099547}
+  - {x: 0.67496717, y: 0.0000009640572, z: -0.44021106}
+  - {x: 1.0285972, y: 0.00000047065782, z: -0.22018974}
+  - {x: 1.3821363, y: -0.000000023121455, z: 0.0000009844854}
+  - {x: 1.7707108, y: 0.00000032767124, z: 0.13254938}
+  - {x: 2.1589088, y: 0.00000068171056, z: 0.26632452}
+  - {x: 2.6123474, y: 0.000000044910365, z: 0.0000019809545}
+  - {x: 3.0214694, y: 0.000000031854466, z: 0.000001863621}
+  - {x: 3.4305544, y: 0.000000015035724, z: 0.0000017124709}
+  - {x: 0, y: 0, z: 0}
+  restPositions:
+  - {x: -3.1517944, y: 0.000000035177308, z: 0.00000044246943, w: 1}
+  - {x: -2.6583476, y: 0.000000055817313, z: 0.0000003443113, w: 1}
+  - {x: -2.1648655, y: 0.00000007436549, z: 0.00000025610134, w: 1}
+  - {x: -1.6312462, y: 0.00000047635393, z: 0.24678928, w: 1}
+  - {x: -1.0947044, y: 0.0000008666185, z: 0.48638076, w: 1}
+  - {x: -0.6213006, y: 0.00000041760393, z: 0.24109243, w: 1}
+  - {x: -0.14600088, y: -0.000000023727447, z: 0.0000013037319, w: 1}
+  - {x: 0.2640656, y: 0.00000047216326, z: -0.22099547, w: 1}
+  - {x: 0.67496717, y: 0.0000009640572, z: -0.44021106, w: 1}
+  - {x: 1.0285972, y: 0.00000047065782, z: -0.22018974, w: 1}
+  - {x: 1.3821363, y: -0.000000023121455, z: 0.0000009844854, w: 1}
+  - {x: 1.7707108, y: 0.00000032767124, z: 0.13254938, w: 1}
+  - {x: 2.1589088, y: 0.00000068171056, z: 0.26632452, w: 1}
+  - {x: 2.6123474, y: 0.000000044910365, z: 0.0000019809545, w: 1}
+  - {x: 3.0214694, y: 0.000000031854466, z: 0.000001863621, w: 1}
+  - {x: 3.4305544, y: 0.000000015035724, z: 0.0000017124709, w: 1}
+  - {x: 0, y: 0, z: 0, w: 0}
+  orientations: []
+  restOrientations: []
+  velocities:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  angularVelocities: []
+  invMasses:
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 0
+  invRotationalMasses: []
+  filters: 0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff00000000
+  principalRadii:
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0.1, y: 0.1, z: 0.1}
+  - {x: 0, y: 0, z: 0}
+  colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0, g: 0, b: 0, a: 0}
+  points: 
+  edges: 000000000100000001000000020000000200000003000000030000000400000004000000050000000500000006000000060000000700000007000000080000000800000009000000090000000a0000000a0000000b0000000b0000000c0000000c0000000d0000000d0000000e0000000e0000000f000000
+  triangles: 
+  distanceConstraintsData:
+    batches:
+    - m_IDs: 0000000001000000020000000300000004000000050000000600000007000000
+      m_IDToIndex: 0000000001000000020000000300000004000000050000000600000007000000
+      m_ConstraintCount: 8
+      m_ActiveConstraintCount: 8
+      m_InitialActiveConstraintCount: 8
+      particleIndices:
+        serializedContents: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000
+        m_AlignBytes: 16
+      lambdas:
+        serializedContents: []
+        m_AlignBytes: 16
+      restLengths:
+        serializedContents:
+        - 0.49344683
+        - 0.58792377
+        - 0.53317684
+        - 0.46582624
+        - 0.41648963
+        - 0.41055962
+        - 0.5258652
+        - 0.40908504
+        m_AlignBytes: 16
+      stiffnesses:
+        serializedContents:
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        m_AlignBytes: 16
+    - m_IDs: 0000000001000000020000000300000004000000050000000600000007000000
+      m_IDToIndex: 0000000001000000020000000300000004000000050000000600000007000000
+      m_ConstraintCount: 8
+      m_ActiveConstraintCount: 7
+      m_InitialActiveConstraintCount: 7
+      particleIndices:
+        serializedContents: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000000000000000000
+        m_AlignBytes: 16
+      lambdas:
+        serializedContents: []
+        m_AlignBytes: 16
+      restLengths:
+        serializedContents:
+        - 0.4934821
+        - 0.5876063
+        - 0.5329491
+        - 0.4657205
+        - 0.41650194
+        - 0.41060138
+        - 0.409122
+        - 0
+        m_AlignBytes: 16
+      stiffnesses:
+        serializedContents:
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        m_AlignBytes: 16
+  bendConstraintsData:
+    batches:
+    - m_IDs: 0000000001000000020000000300000004000000
+      m_IDToIndex: 0000000001000000020000000300000004000000
+      m_ConstraintCount: 5
+      m_ActiveConstraintCount: 5
+      m_InitialActiveConstraintCount: 5
+      particleIndices:
+        serializedContents: 000000000200000001000000030000000500000004000000060000000800000007000000090000000b0000000a0000000c0000000e0000000d000000
+        m_AlignBytes: 16
+      lambdas:
+        serializedContents: []
+        m_AlignBytes: 16
+      restBends:
+        serializedContents:
+        - 0.000011682511
+        - 0.16299109
+        - 0.00065574615
+        - 0.031461846
+        - 0.0899948
+        m_AlignBytes: 16
+      bendingStiffnesses:
+        serializedContents:
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        m_AlignBytes: 16
+      plasticity:
+        serializedContents:
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        m_AlignBytes: 16
+    - m_IDs: 0000000001000000020000000300000004000000
+      m_IDToIndex: 0000000001000000020000000300000004000000
+      m_ConstraintCount: 5
+      m_ActiveConstraintCount: 5
+      m_InitialActiveConstraintCount: 5
+      particleIndices:
+        serializedContents: 0100000003000000020000000400000006000000050000000700000009000000080000000a0000000c0000000b0000000d0000000f0000000e000000
+        m_AlignBytes: 16
+      lambdas:
+        serializedContents: []
+        m_AlignBytes: 16
+      restBends:
+        serializedContents:
+        - 0.08334391
+        - 0.0015351892
+        - 0.14765163
+        - 0.00042771586
+        - 0.000012397772
+        m_AlignBytes: 16
+      bendingStiffnesses:
+        serializedContents:
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        m_AlignBytes: 16
+      plasticity:
+        serializedContents:
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        m_AlignBytes: 16
+    - m_IDs: 0000000001000000020000000300000004000000
+      m_IDToIndex: 0000000001000000020000000300000004000000
+      m_ConstraintCount: 5
+      m_ActiveConstraintCount: 4
+      m_InitialActiveConstraintCount: 4
+      particleIndices:
+        serializedContents: 020000000400000003000000050000000700000006000000080000000a000000090000000b0000000d0000000c0000000e000000100000000f000000
+        m_AlignBytes: 16
+      lambdas:
+        serializedContents: []
+        m_AlignBytes: 16
+      restBends:
+        serializedContents:
+        - 0.0025894288
+        - 0.022752678
+        - 0.00006408041
+        - 0.13512729
+        - 1.2798798
+        m_AlignBytes: 16
+      bendingStiffnesses:
+        serializedContents:
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        m_AlignBytes: 16
+      plasticity:
+        serializedContents:
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        - {x: 0, y: 0}
+        m_AlignBytes: 16
+  skinConstraintsData:
+    batches: []
+  tetherConstraintsData:
+    batches: []
+  stretchShearConstraintsData:
+    batches: []
+  bendTwistConstraintsData:
+    batches: []
+  shapeMatchingConstraintsData:
+    batches: []
+  aerodynamicConstraintsData:
+    batches: []
+  chainConstraintsData:
+    batches: []
+  volumeConstraintsData:
+    batches: []
+  groups:
+  - {fileID: -7828078713169601980}
+  - {fileID: -9138158572052056740}
+  - {fileID: 8902865773265852534}
+  - {fileID: -1579985929624494094}
+  - {fileID: -6422044287048655407}
+  - {fileID: 6053871389906036566}
+  - {fileID: -5335283029686375946}
+  - {fileID: 8755007424480159107}
+  - {fileID: 5408144849241404321}
+  path:
+    m_Names:
+    - Start Point
+    - point1
+    - point2
+    - point3
+    - point4
+    - point5
+    - point6
+    - point7
+    - end
+    m_Points:
+      data:
+      - tangentMode: 0
+        inTangent: {x: -0.25, y: -0, z: -0}
+        position: {x: -3.1517944, y: 0.000000035177308, z: 0.00000044246943}
+        outTangent: {x: 0.018288136, y: 0, z: 0}
+      - tangentMode: 0
+        inTangent: {x: -0.08498931, y: -0, z: -0}
+        position: {x: -2.1648655, y: 0.00000007436549, z: 0.00000025610134}
+        outTangent: {x: 0.061034918, y: 0, z: 0}
+      - tangentMode: 0
+        inTangent: {x: -0.08461243, y: -0, z: -0}
+        position: {x: -1.0947044, y: 0.0000008666185, z: 0.48638076}
+        outTangent: {x: 0.07740152, y: 0, z: 0}
+      - tangentMode: 0
+        inTangent: {x: -0.08988324, y: -0, z: -0}
+        position: {x: -0.14600088, y: -0.000000023727447, z: 0.0000013037319}
+        outTangent: {x: 0.08427483, y: 0, z: 0}
+      - tangentMode: 0
+        inTangent: {x: -0.089349, y: -0, z: -0}
+        position: {x: 0.67496717, y: 0.0000009640572, z: -0.44021106}
+        outTangent: {x: 0.08480672, y: 0, z: 0}
+      - tangentMode: 0
+        inTangent: {x: -0.08436596, y: -0, z: -0}
+        position: {x: 1.3821363, y: -0.000000023121455, z: 0.0000009844854}
+        outTangent: {x: 0.0808267, y: 0, z: 0}
+      - tangentMode: 0
+        inTangent: {x: -0.07603568, y: -0, z: -0}
+        position: {x: 2.1589088, y: 0.00000068171056, z: 0.26632452}
+        outTangent: {x: 0.11854842, y: 0, z: 0}
+      - tangentMode: 0
+        inTangent: {x: -0.0935508, y: 0, z: 0}
+        position: {x: 2.6123474, y: 0.000000044910365, z: 0.0000019809545}
+        outTangent: {x: 0.15242839, y: 0, z: 0}
+      - tangentMode: 0
+        inTangent: {x: -0.029283345, y: 0, z: 0}
+        position: {x: 3.4305544, y: 0.000000015035724, z: 0.0000017124709}
+        outTangent: {x: 0.25, y: 0, z: 0}
+    m_Normals:
+      data:
+      - {x: 0, y: 1, z: 0}
+      - {x: 0, y: 1, z: 0}
+      - {x: 0, y: 1, z: 0}
+      - {x: 0, y: 1, z: 0}
+      - {x: 0, y: 1, z: 0}
+      - {x: 0, y: 1, z: 0}
+      - {x: 0, y: 1, z: 0}
+      - {x: 0, y: 1, z: 0}
+      - {x: 0, y: 1, z: 0}
+    m_Colors:
+      data:
+      - {r: 1, g: 1, b: 1, a: 1}
+      - {r: 1, g: 1, b: 1, a: 1}
+      - {r: 1, g: 1, b: 1, a: 1}
+      - {r: 1, g: 1, b: 1, a: 1}
+      - {r: 1, g: 1, b: 1, a: 1}
+      - {r: 1, g: 1, b: 1, a: 1}
+      - {r: 1, g: 1, b: 1, a: 1}
+      - {r: 1, g: 1, b: 1, a: 1}
+      - {r: 1, g: 1, b: 1, a: 1}
+    m_Thickness:
+      data:
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+    m_Masses:
+      data:
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+    m_RotationalMasses:
+      data:
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+    m_Filters:
+      data: 0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff0200ffff
+    m_Closed: 0
+    m_ArcLengthTable:
+    - 0
+    - 0.0083197355
+    - 0.027335037
+    - 0.055967823
+    - 0.09313999
+    - 0.13777347
+    - 0.18879019
+    - 0.24511203
+    - 0.3056609
+    - 0.36935875
+    - 0.43512747
+    - 0.50188905
+    - 0.56856525
+    - 0.6340781
+    - 0.6973495
+    - 0.75730133
+    - 0.81285554
+    - 0.862934
+    - 0.9064587
+    - 0.94235146
+    - 0.9695342
+    - 0.98692894
+    - 1.0017341
+    - 1.028426
+    - 1.0659566
+    - 1.1131085
+    - 1.1686326
+    - 1.2312691
+    - 1.2997538
+    - 1.3728203
+    - 1.4492011
+    - 1.5276283
+    - 1.6068338
+    - 1.6855495
+    - 1.7625076
+    - 1.8364412
+    - 1.9060845
+    - 1.9701741
+    - 2.02745
+    - 2.0766604
+    - 2.11657
+    - 2.1459916
+    - 2.163943
+    - 2.180015
+    - 2.2060702
+    - 2.2413526
+    - 2.2848625
+    - 2.335542
+    - 2.3923123
+    - 2.4540856
+    - 2.5197694
+    - 2.588269
+    - 2.6584878
+    - 2.729329
+    - 2.799696
+    - 2.8684921
+    - 2.934622
+    - 2.996992
+    - 3.0545123
+    - 3.1060982
+    - 3.1506772
+    - 3.1872022
+    - 3.2146943
+    - 3.2324328
+    - 3.248496
+    - 3.272668
+    - 3.3044221
+    - 3.3429704
+    - 3.3874514
+    - 3.4369757
+    - 3.4906406
+    - 3.5475368
+    - 3.6067517
+    - 3.66737
+    - 3.7284763
+    - 3.789154
+    - 3.8484876
+    - 3.9055626
+    - 3.9594667
+    - 4.009292
+    - 4.054138
+    - 4.093118
+    - 4.125376
+    - 4.1501327
+    - 4.166875
+    - 4.1823077
+    - 4.204612
+    - 4.2334666
+    - 4.268235
+    - 4.3081846
+    - 4.3525434
+    - 4.400522
+    - 4.4513226
+    - 4.5041404
+    - 4.5581684
+    - 4.6125984
+    - 4.6666217
+    - 4.7194295
+    - 4.770215
+    - 4.818174
+    - 4.862508
+    - 4.9024267
+    - 4.937159
+    - 4.965971
+    - 4.9882245
+    - 5.003598
+    - 5.0188165
+    - 5.0411263
+    - 5.0699134
+    - 5.1044564
+    - 5.1440034
+    - 5.187788
+    - 5.235039
+    - 5.2849817
+    - 5.336839
+    - 5.389834
+    - 5.443187
+    - 5.496121
+    - 5.5478563
+    - 5.5976157
+    - 5.6446223
+    - 5.6881003
+    - 5.7272773
+    - 5.7613864
+    - 5.7896724
+    - 5.811411
+    - 5.825982
+    - 5.8438354
+    - 5.8637342
+    - 5.8857894
+    - 5.9099264
+    - 5.9359627
+    - 5.963651
+    - 5.9927044
+    - 6.02281
+    - 6.0536385
+    - 6.0848513
+    - 6.116103
+    - 6.1470456
+    - 6.1773295
+    - 6.2066092
+    - 6.2345448
+    - 6.260807
+    - 6.285086
+    - 6.3071055
+    - 6.3266473
+    - 6.3436027
+    - 6.3580794
+    - 6.38303
+    - 6.4138594
+    - 6.449861
+    - 6.4903274
+    - 6.5345516
+    - 6.5818267
+    - 6.6314454
+    - 6.682701
+    - 6.7348866
+    - 6.787295
+    - 6.839219
+    - 6.889952
+    - 6.938787
+    - 6.9850163
+    - 7.0279336
+    - 7.0668316
+    - 7.101003
+    - 7.129741
+    - 7.152339
+    - 7.1680894
+    - 7.1762857
+    m_TotalSplineLenght: 7.1762857
+    OnPathChanged:
+      m_PersistentCalls:
+        m_Calls: []
+    OnControlPointAdded:
+      m_PersistentCalls:
+        m_Calls: []
+    OnControlPointRemoved:
+      m_PersistentCalls:
+        m_Calls: []
+    OnControlPointRenamed:
+      m_PersistentCalls:
+        m_Calls: []
+  thickness: 0.1
+  resolution: 0.15
+  m_InterParticleDistance: 0.47841904
+  totalParticles: 17
+  m_RestLength: 7.6367755
+  restLengths:
+  - 0.49344683
+  - 0.4934821
+  - 0.58792377
+  - 0.5876063
+  - 0.53317684
+  - 0.5329491
+  - 0.46582624
+  - 0.4657205
+  - 0.41648963
+  - 0.41650194
+  - 0.41055962
+  - 0.41060138
+  - 0.5258652
+  - 0.409122
+  - 0.40908504
+  - 0.47841904
+  - 0
+  pooledParticles: 1
+--- !u!114 &5408144849241404321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775ad4994fda946d1a5936c7e2dfc785, type: 3}
+  m_Name: end
+  m_EditorClassIdentifier: 
+  particleIndices: 0f000000
+  m_Blueprint: {fileID: 11400000}
+--- !u!114 &6053871389906036566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775ad4994fda946d1a5936c7e2dfc785, type: 3}
+  m_Name: point5
+  m_EditorClassIdentifier: 
+  particleIndices: 0a000000
+  m_Blueprint: {fileID: 11400000}
+--- !u!114 &8755007424480159107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775ad4994fda946d1a5936c7e2dfc785, type: 3}
+  m_Name: point7
+  m_EditorClassIdentifier: 
+  particleIndices: 0d000000
+  m_Blueprint: {fileID: 11400000}
+--- !u!114 &8902865773265852534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775ad4994fda946d1a5936c7e2dfc785, type: 3}
+  m_Name: point2
+  m_EditorClassIdentifier: 
+  particleIndices: 04000000
+  m_Blueprint: {fileID: 11400000}

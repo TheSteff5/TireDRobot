@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleAttachment : MonoBehaviour
+public class RopeParticleAttachment : MonoBehaviour
 {
     public ObiSolver solver;
     public ObiRope rope;
