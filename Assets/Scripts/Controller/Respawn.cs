@@ -6,10 +6,13 @@ public class Respawn : MonoBehaviour
 {
     public GameObject checkpoint;
     public GameObject player;
+    public GameObject gunObject;
+    public VRGrapplingHook grapplingHook;
+    private GameController gameController;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameController = FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -26,8 +29,15 @@ public class Respawn : MonoBehaviour
         {
             Debug.LogWarning("PLAYER ENTERED");
             player.GetComponent<Rigidbody>().useGravity = false;
+            gameController.ResetState();
            // player.GetComponent<Rigidbody>().isKinematic = true;
             player.transform.position = checkpoint.transform.position;
+
+            if (grapplingHook != null && gunObject != null)
+            {
+                grapplingHook.DetachHook();
+                gunObject.transform.position = checkpoint.transform.position;
+            }
         }
 
     }

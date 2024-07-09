@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public PlayerController player;
     public Checkpoint[] checkpoints;
     private Rigidbody playerRigidBody;
+    public MoveableTarget[] targets;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,4 +42,11 @@ public class GameController : MonoBehaviour
         //playerRigidBody.useGravity = false;
     }
 
+    public void ResetState()
+    {
+       foreach(MoveableTarget target in targets)
+        {
+            target.stopMoving = false;
+        }
+    }
 }
