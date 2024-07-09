@@ -4,9 +4,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class InitializeClimbableObjects : MonoBehaviour
 {
-    public PlayerController player; 
+    //public PlayerController player; 
     public ClimbInteractable climbInteractable;
-    private Rigidbody playerRigidBody;
+    //private Rigidbody playerRigidBody;
     public VRGrapplingHook grapplingHook;
 
     // Start is called before the first frame update
@@ -14,7 +14,7 @@ public class InitializeClimbableObjects : MonoBehaviour
     {
         // Ensure the Climb Interactable component is referenced
         climbInteractable = GetComponent<ClimbInteractable>();
-        playerRigidBody = player.playerRig.GetComponent<Rigidbody>();
+        //playerRigidBody = player.playerRig.GetComponent<Rigidbody>();
         if (grapplingHook != null)
         {
             // Subscribe to the event
