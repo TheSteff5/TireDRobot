@@ -24,20 +24,20 @@ public class GameController : MonoBehaviour
     public void setPlayerClimbing()
     {
         player.climbing = true;
-        Debug.Log(checkpoints[0].getArrived());
-        if (checkpoints[0].getArrived())
-        {
+      
             playerRigidBody.useGravity = false;
-        }
+       
     }
 
     public void removePlayerClimbing()
     {
+
+        Debug.Log("stopped climbing");
         player.climbing = false;
-        if (checkpoints[0].getArrived())
-        {
+     
+            Debug.Log("use gravity");
             playerRigidBody.useGravity = true;
-        }
+        
         //playerRigidBody.useGravity = false;
     }
 
