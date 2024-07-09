@@ -1,22 +1,19 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MoveToHand : MonoBehaviour
+public class MoveSword : MonoBehaviour
 {
-
     public GameObject rightHand;
-    public GameObject rope;
-    public InputActionReference primaryButtonReference;
+    public InputActionReference secondaryButtonReference;
 
     private Rigidbody rb;
 
     private void Awake()
     {
-        primaryButtonReference.action.Enable();
-        primaryButtonReference.action.performed += Move;
+        secondaryButtonReference.action.Enable();
+        secondaryButtonReference.action.performed += Move;
     }
 
     private void Move(InputAction.CallbackContext context)
@@ -26,9 +23,5 @@ public class MoveToHand : MonoBehaviour
 
         transform.position = rightHand.transform.position;
         rb.isKinematic = true;
-
-        VRGrapplingHook hook = rope.GetComponent<VRGrapplingHook>();
-
-        hook.DetachHook();
     }
 }
