@@ -29,11 +29,20 @@ public class Respawn : MonoBehaviour
         {
             Debug.LogWarning("PLAYER ENTERED");
             player.GetComponent<Rigidbody>().useGravity = false;
+            if (grapplingHook != null && gunObject != null)
+            {
+                grapplingHook.DetachHook();
+                gunObject.transform.position = checkpoint.transform.position;
+            }
+            gameController.ResetState();
             // player.GetComponent<Rigidbody>().isKinematic = true;
 
             Invoke("setPosition", 0.5f); // 
 
-  
+
+         
+
+
         }
 
     }
@@ -41,6 +50,8 @@ public class Respawn : MonoBehaviour
     void setPosition()
     {
         player.transform.position = checkpoint.transform.position;
+
+     
     }
 
 }

@@ -2,25 +2,66 @@ using Obi;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
+public class ObiRopeCut
+{
+    public bool cut;
+    public ObiRope rope;
+}
 public class RopeCut : MonoBehaviour
 {
-
+    public GameObject spawn;
+    public GameObject player;
     public ObiSolver solver;
+    public ObiRope[] ropes;
+
+    private ObiRopeCut[] obiRopeCuts;
+
+    void Awake()
+    {
+        obiRopeCuts = new ObiRopeCut[ropes.Length];
+        for (int i = 0; i < ropes.Length; i++)
+        {
+            obiRopeCuts[i] = new ObiRopeCut();
+            obiRopeCuts[i].cut = false;
+            obiRopeCuts[i].rope = ropes[i];
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("CutCollider"))
         {
+
+
+
             ObiRope rope = other.GetComponentInParent<ObiRope>();
-            FindClosestParticle(rope);
-        } else
+            for (int i = 0; i < ropes.Length; i++)
+            {
+                if (obiRopeCuts[i].rope.Equals(rope))
+                {
+
+                    FindClosestParticle(rope, obiRopeCuts[i]);
+                    // Check if all values in the array are true
+                    if (obiRopeCuts.All(value => value.cut))
+                    {
+                        // Trigger the function
+                        OnAllValuesTrue();
+                    }
+                }
+            }
+
+
+
+        }
+        else
         {
             Debug.Log("GameObject is not Rope");
         }
     }
 
-    private void FindClosestParticle(ObiRope rope)
+    private void FindClosestParticle(ObiRope rope, ObiRopeCut ropeCut)
     {
         bool cut = false;
         float minDistance = float.MaxValue;
@@ -42,12 +83,22 @@ public class RopeCut : MonoBehaviour
         if (closestParticleIndex != -1)
         {
             rope.Tear(rope.elements[closestParticleIndex]);
-            cut = true;
+            ropeCut.cut = true;
         }
 
-        if (cut)
+        if (ropeCut.cut)
         {
             rope.RebuildConstraintsFromElements();
         }
     }
+
+    void OnAllValuesTrue()
+    {
+        player.GetComponent<Rigidbody>().useGravity = false;
+        // player.GetComponent<Rigidbody>().isKinematic = true;
+        player.transform.position = spawn.transform.position;
+        // The function to be triggered
+        Debug.Log("All values are true!");
+    }
+
 }

@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public PlayerController player;
     public Checkpoint[] checkpoints;
     private Rigidbody playerRigidBody;
+    public MoveableTarget[] targets;
 
     public ActionBasedContinuousMoveProvider move;
     // Start is called before the first frame update
