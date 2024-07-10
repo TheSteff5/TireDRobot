@@ -46,4 +46,11 @@ public class GameController : MonoBehaviour
         //move.gravityApplicationMode = ContinuousMoveProviderBase.GravityApplicationMode.Immediately;
     }
 
+    public void ResetState()
+    {
+       foreach(MoveableTarget target in targets)
+        {
+            target.stopMoving = false;
+        }
+    }
 }

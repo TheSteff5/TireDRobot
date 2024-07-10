@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class CheckpointAction : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
+    public GameObject spawn;
     public PlayerController player;
-    public GameObject checkpoint;
     public ClimbInteractable climbingController;
-    public GameObject gunObject;
-    public VRGrapplingHook grapplingHook; 
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -21,22 +20,17 @@ public class CheckpointAction : MonoBehaviour
         
     }
 
-    public void setCheckpoint()
+    public void OnTriggerEnter(Collider other)
     {
         if (climbingController != null && player != null)
         {
             climbingController.enabled = false;
-            player.playerRig.transform.position = this.checkpoint.transform.position;
-            player.playerRig.GetComponent<Rigidbody>().useGravity = false;
+            if (other.tag == "MainCamera")
+            {
+                player.GetComponent<Rigidbody>().useGravity = false;
+                player.playerRig.transform.position = spawn.transform.position;
+            }
             climbingController.enabled = true;
-        }
-
-
-
-        if (grapplingHook != null && gunObject != null)
-        {
-            grapplingHook.DetachHook();
-            gunObject.transform.position = checkpoint.transform.position;
         }
     }
 }
