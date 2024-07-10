@@ -84,6 +84,7 @@ public class VRGrapplingHook : MonoBehaviour
         // Tweak rope parameters:
         rope.maxBending = 0.001f;
         rope.stretchCompliance = 0;
+        rope.stretchingScale = 0.8f;
 
         // Add a cursor to be able to change rope length:
         cursor = rope.gameObject.AddComponent<ObiRopeCursor>();
