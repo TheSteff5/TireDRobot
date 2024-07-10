@@ -15,6 +15,7 @@ public class RopeCut : MonoBehaviour
     public GameObject player;
     public ObiSolver solver;
     public ObiRope[] ropes;
+    public GameObject text;
 
     private ObiRopeCut[] obiRopeCuts;
 
@@ -27,6 +28,7 @@ public class RopeCut : MonoBehaviour
             obiRopeCuts[i].cut = false;
             obiRopeCuts[i].rope = ropes[i];
         }
+        text.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -94,11 +96,7 @@ public class RopeCut : MonoBehaviour
 
     void OnAllValuesTrue()
     {
-        player.GetComponent<Rigidbody>().useGravity = false;
-        // player.GetComponent<Rigidbody>().isKinematic = true;
-        player.transform.position = spawn.transform.position;
-        // The function to be triggered
-        Debug.Log("All values are true!");
+        text.SetActive(true);
     }
 
 }
