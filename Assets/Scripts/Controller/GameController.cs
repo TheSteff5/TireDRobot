@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     public PlayerController player;
     public Checkpoint[] checkpoints;
     private Rigidbody playerRigidBody;
+
+    public ActionBasedContinuousMoveProvider move;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,13 +27,15 @@ public class GameController : MonoBehaviour
     {
         player.climbing = true;
       
-            playerRigidBody.useGravity = false;
+        playerRigidBody.useGravity = false;
+
+        //move.gravityApplicationMode = ContinuousMoveProviderBase.GravityApplicationMode.AttemptingMove;
        
     }
 
     public void removePlayerClimbing()
     {
-
+        
         Debug.Log("stopped climbing");
         player.climbing = false;
      
@@ -39,6 +43,7 @@ public class GameController : MonoBehaviour
             playerRigidBody.useGravity = true;
         
         //playerRigidBody.useGravity = false;
+        //move.gravityApplicationMode = ContinuousMoveProviderBase.GravityApplicationMode.Immediately;
     }
 
 }

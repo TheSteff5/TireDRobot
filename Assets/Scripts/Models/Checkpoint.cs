@@ -14,7 +14,7 @@ public class Checkpoint: MonoBehaviour
         {
             other.transform.position = transform.position;
             this.arrived = true;
-
+           
         }
         
     }

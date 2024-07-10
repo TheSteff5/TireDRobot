@@ -26,10 +26,18 @@ public class Respawn : MonoBehaviour
         {
             Debug.LogWarning("PLAYER ENTERED");
             player.GetComponent<Rigidbody>().useGravity = false;
-           // player.GetComponent<Rigidbody>().isKinematic = true;
-            player.transform.position = checkpoint.transform.position;
+            // player.GetComponent<Rigidbody>().isKinematic = true;
+
+            Invoke("setPosition", 0.5f); // 
+
+  
         }
 
+    }
+
+    void setPosition()
+    {
+        player.transform.position = checkpoint.transform.position;
     }
 
 }

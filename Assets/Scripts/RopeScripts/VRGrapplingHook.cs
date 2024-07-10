@@ -70,7 +70,7 @@ public class VRGrapplingHook : MonoBehaviour
         rope = gameObject.AddComponent<ObiRope>();
         ropeRenderer = gameObject.AddComponent<ObiRopeExtrudedRenderer>();
         ropeRenderer.section = section;
-        ropeRenderer.uvScale = new Vector2(1, 4);
+        ropeRenderer.uvScale = new Vector2(1, 20);
         ropeRenderer.normalizeV = false;
         ropeRenderer.uvAnchor = 1;
         rope.GetComponent<MeshRenderer>().material = material;

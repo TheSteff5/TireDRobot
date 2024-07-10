@@ -25,6 +25,7 @@ public class CheckpointAction : MonoBehaviour
         {
             climbingController.enabled = false;
             player.playerRig.transform.position = this.checkpoint.transform.position;
+            player.playerRig.GetComponent<Rigidbody>().useGravity = false;
             climbingController.enabled = true;
         }
     }
